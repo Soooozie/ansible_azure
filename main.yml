@@ -33,6 +33,7 @@
       security_group: secgroup001
 
   - name: Create virtual machine
+    register: winvm
     azure_rm_virtualmachine:
       name: "{{ vm_name }}"
       resource_group: Test
@@ -46,3 +47,18 @@
         publisher: MicrosoftWindowsServer
         sku: '2012-R2-Datacenter'
         version: latest
+
+  - azure_rm_publicipaddress_facts:
+      resource_group: Test
+      name: publicip001
+    register: azure_ip
+
+  - add_host:
+      hostname: "{{ item.properties.ipAddress }}"
+      groups: launched
+    with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"
+
+#- hosts: launched
+#  become_user: admin
+#  roles:
+#    - domain_controller
