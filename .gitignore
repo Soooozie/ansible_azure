@@ -1,3 +1,5 @@
 .credentials
 vars.yml
 .vagrant/
+group_vars/
+group_vars/windows 
