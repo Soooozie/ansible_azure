@@ -58,7 +58,8 @@
       groups: launched
     with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"
 
-#- hosts: launched
+- hosts: localhost
 #  become_user: admin
-#  roles:
-#    - domain_controller
+  roles:
+    - key_management
+  #  - domain_controller
