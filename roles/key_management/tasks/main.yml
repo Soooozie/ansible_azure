@@ -1,2 +1,3 @@
 ---
 - import_tasks: key_vault.yml
+- import_tasks: certificate.yml 

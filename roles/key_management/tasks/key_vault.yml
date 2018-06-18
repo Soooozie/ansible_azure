@@ -9,6 +9,39 @@
       name: standard
     access_policies:
       - tenant_id: "{{ vault_tenant_ID }}"
+        object_id: "{{ user_object_ID }}"
+        keys:
+          - get
+          - list
+          - create
+          - delete
+          - import
+          - update
+          - backup
+          - restore
+          - recover
+          - purge
+          - sign
+          - verify
+          - encrypt
+        certificates:
+          - get
+          - list
+          - delete
+          - create
+          - import
+          - update
+          - managecontacts
+          - getissuers
+          - listissuers
+          - setissuers
+          - deleteissuers
+          - manageissuers
+          - recover
+          - purge
+          - backup
+          - restore
+      - tenant_id: "{{ vault_tenant_ID }}"
         object_id: "{{ object_ID }}"
         keys:
           - get
@@ -38,4 +71,6 @@
           - deleteissuers
           - manageissuers
           - recover
-          - purge  
+          - purge
+          - backup
+          - restore

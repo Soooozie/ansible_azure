@@ -1,0 +1,3 @@
+---
+- name: create certificate
+  shell: az keyvault certificate create --name "{{ cert_name }}" --policy "$(az keyvault certificate get-default-policy)" --vault-name "{{ vault_name }}"
