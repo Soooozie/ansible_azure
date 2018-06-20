@@ -6,4 +6,8 @@ group_vars/windows
 roles/domain_controller/vars
 roles/domain_controller/vars/main.yml
 roles/key_management/vars
-roles/key_management/vars/main.yml 
+roles/key_management/vars/main.yml
+roles/virtual_machines/vars
+roles/virtual_machines/vars/main.yml
+roles/virtual_network/vars
+roles/virtual_network/vars/main.yml

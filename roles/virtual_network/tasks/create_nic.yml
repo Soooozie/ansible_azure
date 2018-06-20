@@ -1,0 +1,9 @@
+---
+- name: Create NIC
+  azure_rm_networkinterface:
+    resource_group: Test
+    name: testnic001
+    virtual_network: testvn001
+    subnet: subnet001
+    public_ip_name: publicip001
+    security_group: secgroup001

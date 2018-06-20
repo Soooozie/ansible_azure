@@ -74,3 +74,25 @@
           - purge
           - backup
           - restore
+      - tenant_id: "{{ vault_tenant_ID }}"
+        object_id: "{{ object_ID }}"
+        secrets:
+          - get
+          - list
+          - set
+          - delete
+          - backup
+          - restore
+          - recover
+          - purge
+      - tenant_id: "{{ vault_tenant_ID }}"
+        object_id: "{{ user_object_ID }}"
+        secrets:
+          - get
+          - list
+          - set
+          - delete
+          - backup
+          - restore
+          - recover
+          - purge 

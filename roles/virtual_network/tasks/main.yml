@@ -1,0 +1,5 @@
+---
+- include_tasks: create_virt_network.yml
+- include_tasks: add_subnet.yml
+- include_tasks: create_nic.yml
+- include_tasks: create_pub_ip.yml
