@@ -1,6 +1,6 @@
 ---
 - name: Create public ip
   azure_rm_publicipaddress:
-    resource_group: Test
+    resource_group: "{{ resource_group }}"
     allocation_method: Static
-    name: publicip001
+    name: "{{ public_ip_name }}"

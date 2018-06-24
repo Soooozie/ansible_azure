@@ -3,24 +3,18 @@
   register: winvm
   azure_rm_virtualmachine:
     name: "{{ vm_name }}"
-    resource_group: Test
+    resource_group: "{{ resource_group }}"
     os_type: Windows
     vm_size: Standard_B1s
     admin_username: "{{ admin_username }}"
     admin_password: "{{ admin_password }}"
     state: present
+    virtual_network_name: "{{virtual_network_name }}"
+    subnet_name: "{{ subnet_name }}"
+    network_interface_names: "{{ nic_name }}"
+    cert_validation_mode: validate
     image:
       offer: WindowsServer
       publisher: MicrosoftWindowsServer
       sku: '2012-R2-Datacenter'
       version: latest
-
-- azure_rm_publicipaddress_facts:
-    resource_group: Test
-    name: publicip001
-  register: azure_ip
-
-- add_host:
-    hostname: "{{ item.properties.ipAddress }}"
-    groups: launched
-  with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"

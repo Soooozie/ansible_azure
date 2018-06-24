@@ -1,9 +1,9 @@
 ---
 - name: Create NIC
   azure_rm_networkinterface:
-    resource_group: Test
-    name: testnic001
-    virtual_network: testvn001
-    subnet: subnet001
-    public_ip_name: publicip001
-    security_group: secgroup001
+    resource_group: "{{ resource_group }}"
+    name: "{{ nic_name }}"
+    virtual_network: "{{ virtual_network_name }}"
+    subnet: "{{ subnet_name }}"
+    public_ip_name: "{{ public_ip_name }}"
+    security_group: "{{ security_group_name }}"

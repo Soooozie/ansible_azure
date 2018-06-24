@@ -1,6 +1,2 @@
 ---
-- win_domain_controller:
-    dns_domain_name: "{{ dns_domain_name }}"
-    domain_admin_user: "{{ domain_admin }}"
-    domain_admin_password: "{{ domain_pass }}"
-    state: domain_controller 
+- include_tasks: domain_controller.yml

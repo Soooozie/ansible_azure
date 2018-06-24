@@ -37,3 +37,5 @@ pip install azure
 mkdir ~/.azure
 
 mv sync/.credentials ~/.azure/credentials
+
+pip install "pywinrm>=0.3.0"

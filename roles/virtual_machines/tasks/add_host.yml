@@ -1,0 +1,12 @@
+---
+- azure_rm_publicipaddress_facts:
+    resource_group: "{{ resource_group }}"
+    name: "{{ public_ip_name }}"
+  register: azure_ip
+
+- add_host:
+    name: "{{ host_name }}"
+    hostname: "{{ item.properties.ipAddress }}"
+    groups: launched
+    ansible_connection: winrm
+  with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"
