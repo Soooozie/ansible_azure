@@ -1,0 +1,24 @@
+---
+- azure_rm_securitygroup:
+      resource_group: "{{ resource_group }}"
+      name: "{{ security_group_name }}"
+      purge_rules: yes
+      rules:
+          - name: DenySSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Deny
+            priority: 100
+            direction: Inbound
+          - name: WinRM
+            protocol: Tcp
+            destination_port_range: 5986
+            access: Allow
+            priority: 101
+            direction: Inbound
+          - name: RDP
+            protocol: Tcp
+            destination_port_range: 3389
+            access: Allow
+            priority: 102
+            direction: Inbound

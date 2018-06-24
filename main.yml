@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   roles:
+    - security_groups
     - virtual_network
     - key_management
     - virtual_machines
