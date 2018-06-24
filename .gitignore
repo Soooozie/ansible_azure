@@ -11,3 +11,4 @@ roles/virtual_machines/vars
 roles/virtual_machines/vars/main.yml
 roles/virtual_network/vars
 roles/virtual_network/vars/main.yml
+hosts
