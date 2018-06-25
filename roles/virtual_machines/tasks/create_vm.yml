@@ -12,7 +12,7 @@
     virtual_network_name: "{{virtual_network_name }}"
     subnet_name: "{{ subnet_name }}"
     network_interface_names: "{{ nic_name }}"
-    cert_validation_mode: validate
+  #  cert_validation_mode: validate
     image:
       offer: WindowsServer
       publisher: MicrosoftWindowsServer

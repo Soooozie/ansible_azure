@@ -1,3 +1,8 @@
 ---
+- name: list certificates
+  shell: az keyvault certificate list --vault-name "{{ vault_name }}"
+  register: cert
+
 - name: create certificate
   shell: az keyvault certificate create --name "{{ cert_name }}" --policy "$(az keyvault certificate get-default-policy)" --vault-name "{{ vault_name }}"
+  when: "'domaincontroller' not in cert.stdout"
