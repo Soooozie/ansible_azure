@@ -39,3 +39,11 @@ mkdir ~/.azure
 mv sync/.credentials ~/.azure/credentials
 
 pip install "pywinrm>=0.3.0"
+
+#If you want to use credssp
+pip install pywinrm[credssp]
+
+#If you want to use kerberos
+yum -y install python-devel krb5-devel krb5-libs krb5-workstation
+
+pip install pywinrm[kerberos]
