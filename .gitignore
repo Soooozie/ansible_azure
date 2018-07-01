@@ -14,3 +14,4 @@ roles/virtual_network/vars/main.yml
 roles/security_groups/vars
 roles/security_groups/vars/main.yml
 hosts
+krb5.conf

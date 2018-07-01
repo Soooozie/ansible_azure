@@ -47,3 +47,5 @@ pip install pywinrm[credssp]
 yum -y install python-devel krb5-devel krb5-libs krb5-workstation
 
 pip install pywinrm[kerberos]
+
+mv sync/krb5.conf /etc/krb5.conf 
