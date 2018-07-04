@@ -1,0 +1,15 @@
+---
+- name: enable power shell remoting
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "Enable-PSRemoting -Force"
+
+#- name: firewall rules
+#  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "New-NetFirewallRule -Name "Allow WinRM HTTPS" -DisplayName "WinRM HTTPS" -Enabled True -Profile Any -Action Allow -Direction Inbound -LocalPort 5986 -Protocol TCP"
+
+- name: certificate
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "$thumbprint = (New-SelfSignedCertificate -DnsName $env:COMPUTERNAME -CertStoreLocation Cert:\LocalMachine\My).Thumbprint"
+
+- name: adjust listener
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "$command = "winrm create winrm/config/Listener?Address=*+Transport=HTTPS @{Hostname=""$env:computername""; CertificateThumbprint=""$thumbprint""}""
+
+- name: command
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "cmd.exe /C $command"

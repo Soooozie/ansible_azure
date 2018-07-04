@@ -15,3 +15,9 @@ roles/security_groups/vars
 roles/security_groups/vars/main.yml
 hosts
 krb5.conf
+roles/kerberos/vars/main.yml
+roles/credSSP/vars/main.yml
+roles/kerberos/vars
+roles/credSSP/vars
+roles/certificate_auth/vars
+roles/certificate_auth/vars/main.yml
