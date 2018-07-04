@@ -1,0 +1,4 @@
+---
+- include_tasks: enable_credssp_win_host.yml
+  include_tasks:
+  include_tasks: credssp_cert.yml 

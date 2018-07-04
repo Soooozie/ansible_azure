@@ -1,0 +1,7 @@
+---
+- name: get certificate_thumbprint
+  shell: az keyvault certificate -n "{{ certificate_name }}" --vault_name "{{ keyvault_name }}"
+  register: thumbprint
+
+- name: set certificate for credssp
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "Set-Item -Path WSMan:\localhost\Service\CertificateThumbprint -Value $certificate_thumbprint"

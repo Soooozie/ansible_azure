@@ -1,0 +1,3 @@
+---
+- name: enable credssp on windows host
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "Enable-WSManCredSSP -Role Server -Force"
