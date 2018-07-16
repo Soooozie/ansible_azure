@@ -10,6 +10,8 @@ yum install ansible -y
 
 yum install python-pip -y
 
+yum install cowsay -y
+
 pip install --upgrade pip
 
 python -m pip --version
