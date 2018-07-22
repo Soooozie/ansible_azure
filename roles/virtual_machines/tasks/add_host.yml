@@ -11,8 +11,9 @@
     ansible_connection: winrm
     ansible_user: "{{ admin_username }}"
     ansible_password: "{{ admin_password }}"
-    ansible_winrm_transport: certificate
-    ansible_winrm_cert_pem: "{{ path_to_cert_pem }}"
-    ansible_winrm_cert_key_pem: "{{ path_to_key_pem }}"
+    ansible_port: 5986
+  #  ansible_winrm_transport: kerberos
+  #  ansible_winrm_cert_pem: "{{ path_to_cert_pem }}"
+  #  ansible_winrm_cert_key_pem: "{{ path_to_key_pem }}"
     ansible_winrm_server_cert_validation: ignore
   with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"
