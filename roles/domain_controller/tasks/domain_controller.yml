@@ -3,4 +3,5 @@
     dns_domain_name: "{{ dns_domain_name }}"
     domain_admin_user: "{{ domain_admin }}"
     domain_admin_password: "{{ domain_pass }}"
-    state: domain_controller 
+    safe_mode_password: "{{ domain_pass }}"
+    state: domain_controller
