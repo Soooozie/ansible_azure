@@ -5,7 +5,7 @@
     - virtual_network
     - virtual_machines
     - key_management
-
+#    - credSSP
 
 - hosts: winvm
   roles:
