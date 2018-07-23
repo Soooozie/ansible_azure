@@ -9,6 +9,7 @@
     admin_username: "{{ admin_username }}"
     admin_password: "{{ admin_password }}"
     state: present
+    storage_account: "{{ storage_account }}"
     virtual_network_name: "{{virtual_network_name }}"
     subnet_name: "{{ subnet_name }}"
     network_interface_names: "{{ nic_name }}"

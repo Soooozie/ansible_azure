@@ -1,0 +1,7 @@
+---
+- name: create storage account
+  azure_rm_storageaccount:
+    resource_group: "{{ resource_group }}"
+    name: "{{ storage_account }}"
+    type: "{{ storage_account_type }}"
+    kind: "{{ storage_account_kind }}"

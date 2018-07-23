@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - security_groups
+    - storage_account
     - virtual_network
     - virtual_machines
     - key_management

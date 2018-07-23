@@ -1,0 +1,2 @@
+---
+- include_tasks: create_storage_account.yml

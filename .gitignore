@@ -21,3 +21,5 @@ roles/kerberos/vars
 roles/credSSP/vars
 roles/certificate_auth/vars
 roles/certificate_auth/vars/main.yml
+roles/storage_account/vars
+roles/storage_account/vars/main.yml
