@@ -1,2 +1,4 @@
 ---
+- include_tasks: win_feature.yml
+- include_tasks: win_domain.yml
 - include_tasks: domain_controller.yml
