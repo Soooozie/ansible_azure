@@ -9,6 +9,7 @@ roles/key_management/vars
 roles/key_management/vars/main.yml
 roles/virtual_machines/vars
 roles/virtual_machines/vars/main.yml
+roles/virtual_machines/templates/hosts.j2
 roles/virtual_network/vars
 roles/virtual_network/vars/main.yml
 roles/security_groups/vars

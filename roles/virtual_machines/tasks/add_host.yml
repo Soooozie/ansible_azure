@@ -4,6 +4,8 @@
     name: "{{ public_ip_name }}"
   register: azure_ip
 
+- debug: msg="{{ azure_ip | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"
+
 - add_host:
     name: "{{ host_name }}"
     hostname: "{{ fqdn }}"
@@ -16,4 +18,10 @@
   #  ansible_winrm_cert_pem: "{{ path_to_cert_pem }}"
   #  ansible_winrm_cert_key_pem: "{{ path_to_key_pem }}"
     ansible_winrm_server_cert_validation: ignore
-  with_items: "{{ azure_ip.ansible_facts.azure_publicipaddresses }}"
+  with_items: "{{ azure_ip | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"
+
+- name: Create file
+  template:
+    src: "{{ template_source }}"
+    dest: "{{ hosts_dest }}"
+  delegate_to: localhost

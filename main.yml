@@ -5,7 +5,7 @@
     - storage_account
     - virtual_network
     - virtual_machines
-    - key_management
+#    - key_management
 #    - credSSP
 
 - hosts: winvm
