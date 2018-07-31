@@ -7,9 +7,9 @@
 - debug: msg="{{ azure_ip | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"
 
 - add_host:
-    name: "{{ host_name }}"
-    hostname: "{{ fqdn }}"
-    groups: launched
+    name: "{{ item }}"
+#    hostname: "{{ fqdn }}"
+    groups: "{{ host_name }}"
     ansible_connection: winrm
     ansible_user: "{{ admin_username }}"
     ansible_password: "{{ admin_password }}"
@@ -20,8 +20,8 @@
     ansible_winrm_server_cert_validation: ignore
   with_items: "{{ azure_ip | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"
 
-- name: Create file
-  template:
-    src: "{{ template_source }}"
-    dest: "{{ hosts_dest }}"
-  delegate_to: localhost
+#- name: Create file
+#  template:
+#    src: "{{ template_source }}"
+#    dest: "{{ hosts_dest }}"
+#  delegate_to: localhost
