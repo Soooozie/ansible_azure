@@ -5,3 +5,9 @@
     domain_netbios_name: "{{ domain_netbios_name }}"
     safe_mode_password: :{{ safe_mode_password }}
   register: check_domain
+
+- name: reboot windows vm
+  win_reboot:
+    msg: Windows Rebooting
+    reboot_timeout: 600
+  when: check_domain.reboot_required

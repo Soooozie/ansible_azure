@@ -8,9 +8,3 @@
   with_items:
     - AD-Domain-Services
     - DNS
-
-- name: reboot windows vm
-  win_reboot:
-    msg: Windows Rebooting
-    reboot_timeout: 60
-    
