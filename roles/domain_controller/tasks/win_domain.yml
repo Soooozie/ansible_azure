@@ -1,0 +1,7 @@
+---
+- name: ensure windows domain exists
+  win_domain:
+    dns_domain_name: "{{ dns_domain_name }}"
+    domain_netbios_name: "{{ domain_netbios_name }}"
+    safe_mode_password: :{{ safe_mode_password }}
+  register: check_domain
