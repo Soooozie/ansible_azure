@@ -42,6 +42,11 @@ mv sync/.credentials ~/.azure/credentials
 
 pip install "pywinrm>=0.3.0"
 
+pip install msrestazure --upgrade
+
+#if you want to use dynamic inventory files
+pip install logging 
+
 #If you want to use credssp
 pip install pywinrm[credssp]
 
