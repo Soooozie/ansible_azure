@@ -1,0 +1,7 @@
+---
+- include_tasks: create_nic.yml
+- include_tasks: create_pub_ip.yml
+- include_tasks: create_vm.yml
+- include_tasks: add_hosts.yml
+- include_tasks: enable_remotePS.yml
+- include_tasks: adjust_vn_dns.yml

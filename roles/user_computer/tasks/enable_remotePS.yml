@@ -1,0 +1,6 @@
+---
+- name: enable power shell remoting
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "Enable-PSRemoting -Force"
+
+- name: enable remoting for ansible
+  shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts '$url = "https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1"; $file = "$env:temp\ConfigureRemotingForAnsible.ps1"; (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file); powershell.exe -ExecutionPolicy ByPass -File $file'

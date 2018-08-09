@@ -4,3 +4,4 @@
     resource_group: "{{ resource_group }}"
     name: "{{ virtual_network_name }}"
     address_prefixes: "{{ address_prefix }}"
+#    dns_servers: "{{ dns_address }}"

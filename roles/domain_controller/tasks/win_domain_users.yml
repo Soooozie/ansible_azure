@@ -1,0 +1,8 @@
+---
+- name: Create domain user
+  win_domain_user:
+    name: "{{ user_name }}"
+    password: "{{ user_password }}"
+    state: present
+    groups:
+      - Domain Users

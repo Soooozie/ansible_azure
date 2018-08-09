@@ -1,0 +1,17 @@
+---
+- azure_rm_publicipaddress_facts:
+    resource_group: "{{ resource_group }}"
+    name: "{{ public_ip_name }}"
+  register: azure_user
+
+- debug: msg="{{ azure_user | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"
+
+- add_host:
+    name: "{{ item }}"
+    groups: "{{ host_name }}"
+    ansible_connection: winrm
+    ansible_user: "{{ admin_username }}"
+    ansible_password: "{{ admin_password }}"
+    ansible_port: 5986
+    ansible_winrm_server_cert_validation: ignore
+  with_items: "{{ azure_user | json_query('ansible_facts.azure_publicipaddresses[*].properties.ipAddress') }}"

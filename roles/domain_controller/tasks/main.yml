@@ -1,7 +1,5 @@
 ---
 - include_tasks: win_feature.yml
 - include_tasks: win_domain.yml
-#- include_tasks: win_domain_controller.yml
-#- include_tasks: win_domain_membership.yml
-#- include_tasks: win_domain_user.yml
-#- include_tasks: win_domain_group.yml
+- include_tasks: win_domain_users.yml
+- include_tasks: win_dns.yml

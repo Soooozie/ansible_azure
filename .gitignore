@@ -25,3 +25,7 @@ roles/certificate_auth/vars/main.yml
 roles/storage_account/vars
 roles/storage_account/vars/main.yml
 .notes.md
+roles/user_computer/vars
+roles/user_computer/vars/main.yml
+roles/configure_users/vars
+roles/configure_users/vars/main.yml

@@ -1,0 +1,7 @@
+---
+- name: set dns server
+  azure_rm_virtualnetwork:
+    name: "{{ subnet_name }}"
+    address_prefixes_cidr: "{{ address_prefix }}"
+    resource_group: "{{ resource_group }}"
+    dns_servers: "{{ dns_address }}"

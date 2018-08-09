@@ -11,3 +11,11 @@
 - hosts: winvm
   roles:
     - domain_controller
+
+- hosts: localhost
+  roles:
+    - user_computer
+
+- hosts: win_user
+  roles:
+    - configure_users
