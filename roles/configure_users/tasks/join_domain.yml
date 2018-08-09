@@ -5,10 +5,11 @@
     domain_admin_user: "{{ user }}"
     domain_admin_password: "{{ password }}"
     state: domain
+  register: check_domain
 
 - name: reboot windows vm
   win_reboot:
     msg: Windows Rebooting
     reboot_timeout: 600
     post_reboot_delay: 60
-  when: domain.reboot_required
+  when: check_domain.reboot_required
