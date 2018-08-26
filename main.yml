@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  become: true
+  become_user: root
   roles:
     - security_groups
     - storage_account
@@ -13,6 +15,8 @@
     - domain_controller
 
 - hosts: localhost
+  become: true
+  become_user: root
   roles:
     - user_computer
 
