@@ -1,4 +1,7 @@
 ---
+- name: login to azure cli
+  shell: az login --service-principal --username "{{ app_id }}" --password "{{ secret }}" --tenant "{{ tenant_id }}"
+
 - name: enable power shell remoting
   shell: az vm run-command invoke -g "{{ resource_group }}" -n "{{ vm_name }}" --command-id RunPowerShellScript --scripts "Enable-PSRemoting -Force"
 
